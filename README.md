@@ -12,3 +12,4 @@ Some projects developed using kivy
 
 **界面图**
 
+![](https://github.com/chuxuan909/KivyBuild/blob/master/deamon_images/oss_kivy.png)
