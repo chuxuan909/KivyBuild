@@ -1,0 +1,37 @@
+<File_Windows>:
+    orientation: 'vertical'
+    FileChooserIconView:
+        id:filechooser
+        size_hint: .9,.9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        multiselect:True
+        dirselect:True
+        filters:['*.jpg','*.png','*.bmp','*.py','*.kv']
+
+    BoxLayout:
+        size_hint_y: None
+        height: 30
+        Button:
+            text: "关闭窗口"
+            on_release: root.cancle_popup()
+
+        Button:
+            text: "上传选择的文件"
+            on_release: root.load(filechooser.selection)
+
+<Main_UI>:
+    canvas.before:
+        BorderImage:
+            source: 'images/paper_backgroud.png'
+            pos: self.pos
+            size: self.size
+    orientation: 'vertical'
+    Label:
+        size_hint: .9,.8
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        text: '选上传的文件的主界面'
+    Button:
+        size_hint: .2,.06
+        pos_hint: {'center_x': .4, 'center_y': .5}
+        text:'上传文件'
+        on_release: root.show_popup()
